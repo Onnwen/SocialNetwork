@@ -22,15 +22,15 @@ public class Permesso {
 	}
 	
 	public void removePermessoPost() {
-		this.post = true;
+		this.post = false;
 	}
 	
 	public void removePermessoLike() {
-		this.like = true;
+		this.like = false;
 	}
 	
 	public void removePermessoCommenti() {
-		this.commenti = true;
+		this.commenti = false;
 	}
 	
 	public boolean post() {
@@ -45,7 +45,7 @@ public class Permesso {
 		return commenti;
 	}
 	
-	// DA COMPLETARE!!!!
+	// DA COMPLETARE!!!!			come vuoi fare?? non ho capito
 	public void stampaPermessi() {
 		System.out.println("Permessi concessi a " + perUtente.getNome() + "\n[VISUALIZZAZIONE POST] Si\n[LIKE] Si\n[PUBBLICAZIONE COMMENTI] Si");
 	}

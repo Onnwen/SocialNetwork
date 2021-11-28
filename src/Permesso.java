@@ -45,7 +45,6 @@ public class Permesso {
 		return commenti;
 	}
 	
-	// DA COMPLETARE!!!!
 	public void stampaPermessi() {
 		System.out.println("Permessi concessi a " + perUtente.getNome() + "\n[VISUALIZZAZIONE POST] Si\n[LIKE] Si\n[PUBBLICAZIONE COMMENTI] Si");
 	}

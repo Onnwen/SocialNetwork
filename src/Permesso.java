@@ -22,15 +22,15 @@ public class Permesso {
 	}
 	
 	public void removePermessoPost() {
-		this.post = true;
+		this.post = false;
 	}
 	
 	public void removePermessoLike() {
-		this.like = true;
+		this.like = false;
 	}
 	
 	public void removePermessoCommenti() {
-		this.commenti = true;
+		this.commenti = false;
 	}
 	
 	public boolean post() {

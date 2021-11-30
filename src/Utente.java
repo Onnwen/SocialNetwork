@@ -21,6 +21,10 @@ public class Utente {
 		this.postTotali = 0;
 	}
 	
+	public Post[] getPost() {
+		return Arrays.copyOf(post, postTotali);
+	}
+	
 	public void addPost(Post post) {
 		this.post[postTotali] = post;
 		postTotali++;

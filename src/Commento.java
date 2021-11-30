@@ -19,6 +19,10 @@ public class Commento {
 		this.data = data;
 	}
 	
+	public int getId() {
+		return id;
+	}
+	
 	public void modifica(String testo) {
 		this.testo = testo;
 	}

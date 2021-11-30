@@ -99,12 +99,7 @@ public class SocialNetwork {
 				File usersFile = new File("users.csv");
 				usersFile.createNewFile();
 			} catch (IOException e1) {
-<<<<<<< HEAD
-				System.out.println("E' stato riscontrato un errore con la scrittura del file \"users.csv\". Avvio abortato.");
-=======
 				System.out.println("E' stato riscontrato un errore con la scrittura del file \"users.csv\". Avvio abortito.");
-				return false;
->>>>>>> dd198edf5374635d1ad3a53fdef6127b2d279495
 			}
 		}
 	}
@@ -132,12 +127,7 @@ public class SocialNetwork {
 				File usersFile = new File("post.csv");
 				usersFile.createNewFile();
 			} catch (IOException e1) {
-<<<<<<< HEAD
-				System.out.println("E' stato riscontrato un errore con la scrittura del file \"post.csv\". Avvio abortato.");
-=======
 				System.out.println("E' stato riscontrato un errore con la scrittura del file \"post.csv\". Avvio abortito.");
-				return false;
->>>>>>> dd198edf5374635d1ad3a53fdef6127b2d279495
 			}
 		}
 	}
@@ -166,12 +156,7 @@ public class SocialNetwork {
 				File usersFile = new File("comments.csv");
 				usersFile.createNewFile();
 			} catch (IOException e1) {
-<<<<<<< HEAD
-				System.out.println("E' stato riscontrato un errore con la scrittura del file \"comments.csv\". Avvio abortato.");
-=======
 				System.out.println("E' stato riscontrato un errore con la scrittura del file \"comments.csv\". Avvio abortito.");
-				return false;
->>>>>>> dd198edf5374635d1ad3a53fdef6127b2d279495
 			}
 		}
 	}

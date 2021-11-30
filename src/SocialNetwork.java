@@ -94,12 +94,17 @@ public class SocialNetwork {
 			}
 			fileReader.close();
 		} catch (FileNotFoundException e) {
-			System.out.println("Non è stato trovato il file \"users.csv\". Caricamento abortato.");
+			System.out.println("Non è stato trovato il file \"users.csv\". Caricamento abortito.");
 			try {
 				File usersFile = new File("users.csv");
 				usersFile.createNewFile();
 			} catch (IOException e1) {
+<<<<<<< HEAD
 				System.out.println("E' stato riscontrato un errore con la scrittura del file \"users.csv\". Avvio abortato.");
+=======
+				System.out.println("E' stato riscontrato un errore con la scrittura del file \"users.csv\". Avvio abortito.");
+				return false;
+>>>>>>> dd198edf5374635d1ad3a53fdef6127b2d279495
 			}
 		}
 	}
@@ -122,12 +127,17 @@ public class SocialNetwork {
 			}
 			fileReader.close();
 		} catch (FileNotFoundException e) {
-			System.out.println("Non è stato trovato il file \"post.csv\". Caricamento abortato.");
+			System.out.println("Non è stato trovato il file \"post.csv\". Caricamento abortito.");
 			try {
 				File usersFile = new File("post.csv");
 				usersFile.createNewFile();
 			} catch (IOException e1) {
+<<<<<<< HEAD
 				System.out.println("E' stato riscontrato un errore con la scrittura del file \"post.csv\". Avvio abortato.");
+=======
+				System.out.println("E' stato riscontrato un errore con la scrittura del file \"post.csv\". Avvio abortito.");
+				return false;
+>>>>>>> dd198edf5374635d1ad3a53fdef6127b2d279495
 			}
 		}
 	}
@@ -151,12 +161,17 @@ public class SocialNetwork {
 			fileReader.close();
 		} catch (FileNotFoundException e) {
 			
-			System.out.println("Non è stato trovato il file \"comments.csv\". Caricamento abortato.");
+			System.out.println("Non è stato trovato il file \"comments.csv\". Caricamento abortito.");
 			try {
 				File usersFile = new File("comments.csv");
 				usersFile.createNewFile();
 			} catch (IOException e1) {
+<<<<<<< HEAD
 				System.out.println("E' stato riscontrato un errore con la scrittura del file \"comments.csv\". Avvio abortato.");
+=======
+				System.out.println("E' stato riscontrato un errore con la scrittura del file \"comments.csv\". Avvio abortito.");
+				return false;
+>>>>>>> dd198edf5374635d1ad3a53fdef6127b2d279495
 			}
 		}
 	}

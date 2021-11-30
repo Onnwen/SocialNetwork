@@ -5,8 +5,9 @@ public class Main {
 		SocialNetwork social = new SocialNetwork();
 		
 		if(social.entra()) {
+			System.out.println("Benvenuto " + social.getUtenteConnesso().getNome() + ".");
 			while(true) {
-				System.out.println("Inserire un nome: ");
+				System.out.println("Cerca un utente: ");
 				Utente utenteCercato = social.cercaUtente(Leggi.stringa());
 				
 				if(utenteCercato != null) {

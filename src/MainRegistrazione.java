@@ -5,15 +5,11 @@ public class Main {
 		int scelta;
 		Scanner obj = new Scanner (System.in);
 		
-		System.out.println("Scegli se: 1]login 2]crea account ");
+		System.out.println("Scegli 2]crea account ");
 		scelta = obj.nextInt();
 		
 		switch (scelta) {
 		case 1: 
-			if (scelta == 1) {
-				
-			}
-		case 2: 
 			if (scelta == 2) {
 				System.out.println("Inserisci il nome: ");
 				String nomeUtente = obj.next();

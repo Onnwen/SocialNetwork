@@ -49,6 +49,8 @@ public class SocialNetwork {
 		return null;
 	}
 	
+	
+	
 	public Utente cercaUtente(int idUtente) {
 		for(int i=0; i<utentiTotali; i++) {
 			if(utenti[i].getId() == idUtente) {

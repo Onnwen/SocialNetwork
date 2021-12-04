@@ -7,6 +7,7 @@ public class Utente {
 	private	String cognome;
 	private	LocalDate dataDiNascita;
 	private Permesso[] permessi;
+	private int permessiTotali;
 	private Post[] post;
 	private int postTotali;
 	public Credenziali credenziali;
@@ -17,6 +18,8 @@ public class Utente {
 		this.cognome = cognome;
 		this.postTotali = 0;
 		this.credenziali = new Credenziali(email, password);
+		this.permessi = new Permesso[20];
+		this.permessiTotali = 0;
 		this.post = new Post[100];
 		this.postTotali = 0;
 	}

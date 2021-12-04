@@ -14,7 +14,7 @@ public class SocialNetwork {
 		this.utenti = new Utente[100];
 		this.utentiTotali = 0;
 		this.utenteConnesso = null;
-		this.carica();
+		this.caricaUtenti();
 	}
 	
 	public Utente[] getUtenti() {

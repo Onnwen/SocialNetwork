@@ -11,7 +11,9 @@ public class Main {
 				Utente utenteCercato = social.cercaUtente(Leggi.stringa());
 				
 				if(utenteCercato != null) {
-					utenteCercato.azioni();
+					social.caricaPost();
+					social.caricaCommenti();
+					utenteCercato.azioni(social.getUtenteConnesso());
 				}
 				else {
 					System.out.println("Utente non trovato.");
@@ -19,7 +21,7 @@ public class Main {
 			}
 		} 
 		else {
-			System.out.println("Terzo tentativo fallito.\nUscita in corso...");
+			System.out.println("Uscita in corso...");
 		}
 	}
 }

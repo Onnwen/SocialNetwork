@@ -9,6 +9,10 @@ public class Permesso {
 		this.perUtente = account;
 	}
 	
+	public Utente getPerUtente() {
+		return this.perUtente;
+	}
+	
 	public void setPermessoPost() {
 		this.post = true;
 	}

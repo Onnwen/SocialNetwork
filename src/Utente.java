@@ -33,14 +33,32 @@ public class Utente {
 		postTotali++;
 	}
 	
-	public void azioni() {
-		System.out.println("[1] Mostra post");
-		
-		switch(Leggi.intero()) {
-			case 1: {
-				this.stampaPost();
+	public void azioni(Utente utenteConnesso) {
+		if(amico(utenteConnesso)) {
+			System.out.println("[1] Mostra post");
+			switch(Leggi.intero()) {
+				case 1: {
+					this.stampaPost();
+				}
 			}
 		}
+		else {
+			System.out.println("[1] Richiedi amicizia");
+			switch(Leggi.intero()) {
+				case 1: {
+					System.out.println(this.getNome() + " riceverà la tua richiesta d'amicizia!");
+				}
+			}
+		}
+	}
+	
+	public boolean amico(Utente utente) {
+		for(Permesso permesso:getPermessi()) {
+			if(permesso.getPerUtente() == utente) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public void stampaPost() {
@@ -82,5 +100,9 @@ public class Utente {
 	
 	public void setDataDiNascita(String stringaData) {
 		this.dataDiNascita = LocalDate.parse(stringaData);
+	}
+	
+	public Permesso[] getPermessi() {
+		return Arrays.copyOf(permessi, permessiTotali);
 	}
 }

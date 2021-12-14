@@ -19,6 +19,24 @@ public class Registrazione {
 		this.cognomeUtente = cognomeUtente;
 	}
 	
+	public String getNome(){
+		return nomeProfilo;
+	}
+	
+	public void setNome(String nomeProfilo){
+		this.nomeProfilo = nomeProfilo;
+	}
+	
+	public String getNomeUtente(){
+		return nomeUtente;
+	}
+	
+	public void setNomeUtente(String nomeUtente){
+		this.nomeUtente = nomeUtente;
+	}
+	
+	public 
+	
 	public void stampa(String nomeUtente,String nomeProfilo,String cognomeUtente) {
 		System.out.println(nomeUtente +"\n"+nomeProfilo+"\n"+cognomeUtente+"");
 	}

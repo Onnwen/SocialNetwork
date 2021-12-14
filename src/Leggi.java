@@ -19,6 +19,4 @@ public class Leggi {
 		scanString.close();
 		return valoreLetto;
 	}
-
-
 }

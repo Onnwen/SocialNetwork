@@ -7,7 +7,7 @@ public class Main {
 		if(social.entra()) {
 			System.out.println("Benvenuto " + social.getUtenteConnesso().getNome() + ".");
 			while(true) {
-				System.out.println("Cerca un utente: ");
+				System.out.print("Cerca un utente: ");
 				Utente utenteCercato = social.cercaUtente(Leggi.stringa());
 				
 				if(utenteCercato != null) {

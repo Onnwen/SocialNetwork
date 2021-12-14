@@ -28,10 +28,10 @@ public class Registrazione {
 		
 		for(int i=0;i<4;i++) {
 			codice = (int) (Math.random()*9);
-			System.out.println("Il codice e: "+codice);
+			System.out.println("Il codice è: "+codice);
 		}
 		
-		System.out.println("Inserisci codice: ");
+		System.out.print("Inserisci codice: ");
 		codiceInserito = s.nextInt();
 		
 		int possibilitaErrore = 2;
@@ -39,8 +39,8 @@ public class Registrazione {
 		do {
 			if(codiceInserito!=codice) {
 				possibilitaErrore--;
-				System.out.println("Errore hai ancora: "+possibilitaErrore);
-				System.out.println("Inserisci codice: ");
+				System.out.println("Errore hai ancora: "+ possibilitaErrore + " tentativi.");
+				System.out.print("Inserisci codice: ");
 				codiceInserito = s.nextInt();
 			}
 			if(possibilitaErrore == 0) {
@@ -50,9 +50,9 @@ public class Registrazione {
 		}while(codiceInserito==codice);
 		
 		if(codiceInserito == codice) {
-			System.out.println("Crea un nome profilo: ");
+			System.out.print("Crea un nome profilo: ");
 			nomeProfilo = s.next();
-			System.out.println("Inserisci password: ");
+			System.out.print("Inserisci password: ");
 			nuovaPassword = s.nextInt();
 		}
 	}

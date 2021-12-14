@@ -49,8 +49,6 @@ public class SocialNetwork {
 		return null;
 	}
 	
-	
-	
 	public Utente cercaUtente(int idUtente) {
 		for(int i=0; i<utentiTotali; i++) {
 			if(utenti[i].getId() == idUtente) {
@@ -79,22 +77,22 @@ public class SocialNetwork {
 	}
 	
 	public boolean registra(){
-		System.out.println("Inserisci il nome: ");
+		System.out.print("Inserisci il nome: ");
 		String nomeUtente = Leggi.stringa();
 		System.out.print("Inserisci cognome: ");
 		String cognomeUtente = Leggi.stringa();
-		System.out.println("Inserisci eta: ");
+		System.out.print("Inserisci eta: ");
 		int eta = Leggi.intero();
 		if(eta<10) {
-			System.out.println("Non puoi accedere al social: ");
+			System.out.println("Non puoi accedere al social.");
 			return false;
 		}
 		
 		//registra.codiceDiRegistrazione(0);
 		
-		System.out.println("Inserisci email: ");
+		System.out.print("Inserisci email: ");
 		String email = Leggi.stringa();
-		System.out.println("Inserisci password : ");
+		System.out.print("Inserisci password: ");
 		String password = Leggi.stringa();
 		
 		utenteConnesso = new Utente(Id.genera(), nomeUtente, cognomeUtente, email, password);
@@ -200,7 +198,7 @@ public class SocialNetwork {
 	}
 	
 	public boolean entra() {
-		System.out.print("Benvenuto.\n[1] Login\n[2] Registrati");
+		System.out.println("Benvenuto.\n[1] Login\n[2] Registrati");
 		
 		if(Leggi.intero() == 1) {
 			return login();

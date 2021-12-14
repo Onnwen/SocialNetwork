@@ -1,13 +1,24 @@
 import java.util.Scanner;
 
 public class Leggi {
-	static Scanner scan = new Scanner(System.in);
-	
 	static public int intero() {
-		return scan.nextInt();
+		Scanner scanInt = new Scanner(System.in);
+		System.out.print("-> ");
+		try {
+			int valoreLetto = scanInt.nextInt();
+			scanInt.close();
+			return valoreLetto;
+		} catch (Exception e) {
+			return intero();
+		}
 	}
 	
 	static public String stringa() {
-		return scan.nextLine();
+		Scanner scanString = new Scanner(System.in);
+		String valoreLetto = scanString.nextLine();
+		scanString.close();
+		return valoreLetto;
 	}
+
+
 }

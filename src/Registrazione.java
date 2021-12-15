@@ -4,7 +4,7 @@ public class Registrazione {
 	private String nomeUtente;
 	private String cognomeUtente;
 	private int eta;
-        private int codice;
+	private int codice;
 	Scanner s = new Scanner (System.in);
 	
 	public Registrazione() {
@@ -76,12 +76,12 @@ public class Registrazione {
 			System.out.print("Crea un nome profilo: ");
 			nomeProfilo = s.next();
 			System.out.print("Inserisci password: ");
-			nuovaPassword = s.nextInt();
+			int nuovaPassword = s.nextInt();
 		}
 	}
 	
 	public boolean controlloEta(){
-		int eta;
+		int eta = 0;
 		if(eta<10){
 			System.out.println("ACCESSO NEGATO: ");
 			return false;

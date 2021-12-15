@@ -206,7 +206,6 @@ public class SocialNetwork {
 		else {
 			return registra();
 		}
-		
 	}
 	
 	public boolean login() {

@@ -5,9 +5,7 @@ public class Leggi {
 		Scanner scanInt = new Scanner(System.in);
 		System.out.print("-> ");
 		try {
-			int valoreLetto = scanInt.nextInt();
-			scanInt.close();
-			return valoreLetto;
+			return scanInt.nextInt();
 		} catch (Exception e) {
 			return intero();
 		}
@@ -15,8 +13,10 @@ public class Leggi {
 	
 	static public String stringa() {
 		Scanner scanString = new Scanner(System.in);
-		String valoreLetto = scanString.nextLine();
-		scanString.close();
-		return valoreLetto;
+		try {
+			return scanString.nextLine();
+		} catch (Exception e) {
+			return stringa();
+		}
 	}
 }

@@ -6,6 +6,7 @@ public class Registrazione {
 	private String cognomeUtente;
 	private int eta;
 	private int codice;
+	private NuovaPassword pass;
 	
 	
 	Scanner s = new Scanner (System.in);
@@ -66,8 +67,11 @@ public class Registrazione {
 				codiceInserito = s.nextInt();
 			}
 			if(possibilitaErrore == 0) {
-				System.out.println("Uscita in corso...");
-				break;
+				System.out.println("Cambia password");
+				nuovaPassword = s.next();
+				pass.setNuovaPassword(nuovaPassword);
+				password = nuovaPassword;
+				
 			}
 		}while(codiceInserito==codice);
 		

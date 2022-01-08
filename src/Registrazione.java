@@ -1,17 +1,16 @@
 import java.util.Scanner;
+
 public class Registrazione {
 	private String nomeProfilo;
 	private String nomeUtente;
 	private String cognomeUtente;
 	private int eta;
 	private int codice;
+	
+	
 	Scanner s = new Scanner (System.in);
 	
-	public Registrazione() {
-		
-	}
-	
-	public Registrazione(String nomeProfilo,String nomeUtente,String cognomeUtente,int eta,int codice) {
+	public Registrazione(int eta,int codice,String nomeProfilo,String nomeUtente,String cognomeUtente)
 		this.nomeProfilo = nomeProfilo;
 		this.nomeUtente  = nomeUtente;
 		this.cognomeUtente = cognomeUtente;
@@ -47,7 +46,7 @@ public class Registrazione {
 		System.out.println(nomeUtente +"\n"+nomeProfilo+"\n"+cognomeUtente+"");
 	}
 	
-	public void codiceDiRegistrazione() {
+	public void codiceDiRegistrazione(int codice) {
 		int codiceInserito;
 		for(int i=0;i<4;i++) {
 			codice = (int) (Math.random()*9);
@@ -60,7 +59,7 @@ public class Registrazione {
 		int possibilitaErrore = 2;
 		
 		do {
-			if(codiceInserito!=codice) {
+			if(!codiceInserito=codice) {
 				possibilitaErrore--;
 				System.out.println("Errore hai ancora: "+ possibilitaErrore + " tentativi.");
 				System.out.print("Inserisci codice: ");
@@ -80,12 +79,11 @@ public class Registrazione {
 		}
 	}
 	
-	public boolean controlloEta(){
-		int eta = 0;
+	public boolean controlloEta(int eta){
+		this.eta = eta;
 		if(eta<10){
 			System.out.println("ACCESSO NEGATO: ");
 			return false;
 		}
 		return true;
 	}
-}

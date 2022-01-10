@@ -1,6 +1,7 @@
 
 public class Permesso {
 	private Utente perUtente;
+	private boolean Amicizia;
 	private boolean post;
 	private boolean like;
 	private boolean commenti;
@@ -13,16 +14,11 @@ public class Permesso {
 		return this.perUtente;
 	}
 	
-	public void setPermessoPost() {
-		this.post = true;
-	}
-	
-	public void setPermessoLike() {
-		this.like = true;
-	}
-	
-	public void setPermessoCommenti() {
+	public void setAmicizia() {
+		this.Amicizia= true;
 		this.commenti = true;
+		this.like = true;
+		this.post = true;
 	}
 	
 	public void removePermessoPost() {

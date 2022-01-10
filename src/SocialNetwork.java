@@ -34,6 +34,15 @@ public class SocialNetwork {
 		cercaUtente(idUtente).addPost(post);
 	}
 	
+	public void addAmico(Utente utente, Utente utente2) {
+		utente.addAmico(utente2);
+	//	set true se è amico
+	}
+	
+	public void addAmico(Utente utente, Utente utente2) {
+		utente2.setAmicizia();
+	}
+	
 	public void addCommento(Commento commento, int idUtente, int idPost) {
 		getPost(idPost).addCommento(commento);
 	}

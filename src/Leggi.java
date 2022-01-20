@@ -19,4 +19,20 @@ public class Leggi {
 			return stringa();
 		}
 	}
+	
+	 public String controlloStringaMail() throws Errore{
+        try{
+            if(registrati.getNomeProfilo().compareTo("@","."){
+                return controlloStringaMail();
+            }
+        }
+        catch(Errore e){
+            throw new Errore();
+        }
+		catch(IllegalFormatException exception){
+			System.out.println("Errore nella mail riscrivi: ");
+			String nomeProfilo = stringa();
+			registrati.setProfilo(nomeProfilo);
+		}
+    }
 }

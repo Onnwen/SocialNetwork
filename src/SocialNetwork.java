@@ -5,6 +5,12 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * 
+ * @author Onnwen Cassitto
+ *
+ */
+
 public class SocialNetwork {
 	private Utente[] utenti;
 	private int utentiTotali;
@@ -17,23 +23,42 @@ public class SocialNetwork {
 		this.caricaUtenti();
 	}
 	
+	/**
+	 * 
+	 * @return Restituisce un array di utenti contenenti tutti gli utenti attualmenti caricati, della dimensione esatta.
+	 */
 	public Utente[] getUtenti() {
 		return Arrays.copyOf(utenti, utentiTotali);
 	}
 	
+	/**
+	 * 
+	 * @return Restituisce l'utente attualmente connesso.
+	 */
 	public Utente getUtenteConnesso() {
 		return utenteConnesso;
 	}
 	
+	
+	/**
+	 * 
+	 * @param utente L'utente da aggiungere.
+	 */
 	public void addUtente(Utente utente) {
 		utenti[utentiTotali] = utente;
 		utentiTotali++;
 	}
 	
+	/**
+	 * 
+	 * @param post Post da aggiungere.
+	 * @param idUtente ID dell'utente a cui aggiungere il post.
+	 */
 	public void addPost(Post post, int idUtente) {
 		cercaUtente(idUtente).addPost(post);
 	}
 	
+	/*
 	public void addAmico(Utente utente, Utente utente2) {
 		utente.addAmico(utente2);
 	//	set true se è amico
@@ -42,11 +67,23 @@ public class SocialNetwork {
 	public void addAmico(Utente utente, Utente utente2) {
 		utente2.setAmicizia();
 	}
+	*/
 	
+	/**
+	 * 
+	 * @param commento Commento da aggiungere.
+	 * @param idUtente ID dell'utente che ha scritto il commento.
+	 * @param idPost ID del post da cui a ggiungere il commento.
+	 */
 	public void addCommento(Commento commento, int idUtente, int idPost) {
 		getPost(idPost).addCommento(commento);
 	}
 	
+	/**
+	 * 
+	 * @param idPost ID del post da cercare.
+	 * @return Post corrispondente all'ID dato come parametro.
+	 */
 	public Post getPost(int idPost) {
 		for(Utente utente:getUtenti()) {
 			for(Post postUtente:utente.getPost()) {
@@ -58,6 +95,11 @@ public class SocialNetwork {
 		return null;
 	}
 	
+	/**
+	 * 
+	 * @param idUtente ID dell'utente da cercare.
+	 * @return Utente corrispondente all'ID dato come parametro.
+	 */
 	public Utente cercaUtente(int idUtente) {
 		for(int i=0; i<utentiTotali; i++) {
 			if(utenti[i].getId() == idUtente) {
@@ -66,7 +108,12 @@ public class SocialNetwork {
 		}
 		return null;
 	}
-	
+
+	/**
+	 * 
+	 * @param nome Nome dell'utente da cercare
+	 * @return Restituisce l'utente corrispondente a quel nome, se esiste, altrimenti null.
+	 */
 	public Utente cercaUtente(String nome) {
 		for(int i=0; i<utentiTotali; i++) {
 			if(utenti[i].getNome().equals(nome)) {
@@ -76,6 +123,12 @@ public class SocialNetwork {
 		return null;
 	}
 	
+	/**
+	 * 
+	 * @param email Indirizzo email utilizzato dall'utente.
+	 * @param password Password utilizzato dall'utente.
+	 * @return Restituisce l'utente corrispondente a quelle credenziali, se esiste, altrimenti null.
+	 */
 	public Utente cercaUtente(String email, String password) {
 		for(int i=0; i<utentiTotali; i++) {
 			if(utenti[i].credenziali.corrette(email, password)) {
@@ -85,6 +138,10 @@ public class SocialNetwork {
 		return null;
 	}
 	
+	/**
+	 * 
+	 * @return Restituisce true se l'utente si è registrato correttamente, altrimenti false.
+	 */
 	public boolean registra(){
 		System.out.print("Inserisci il nome: ");
 		String nomeUtente = Leggi.stringa();
@@ -109,6 +166,9 @@ public class SocialNetwork {
 		return true;
 	}
 	
+	/**
+	 * Carica gli utenti presenti nel file all'interno dell'array degli utenti.
+	 */
 	public void caricaUtenti() {
 		try {
 			File usersFile = new File("users.csv");
@@ -137,6 +197,9 @@ public class SocialNetwork {
 		}
 	}
 	
+	/**
+	 * Carica i post presenti nel file all'interno dell'array dei post.
+	 */
 	public void caricaPost() {
 		try {
 			File postFile = new File("post.csv");
@@ -165,6 +228,9 @@ public class SocialNetwork {
 		}
 	}
 	
+	/**
+	 * Carica i commenti presenti nel file all'interno dell'array dei commenti.
+	 */
 	public void caricaCommenti() {
 		try {
 			File postFile = new File("comments.csv");
@@ -194,18 +260,28 @@ public class SocialNetwork {
 		}
 	}
 	
+	/**
+	 * Carica tutti i dati presenti nei file all'interno dell'oggetto.
+	 */
 	public void carica() {
 		caricaUtenti();
 		caricaPost();
 		caricaCommenti();
 	}
 	
+	/**
+	 * Stampa tutti gli utenti.
+	 */
 	public void stampaUtente() {
 		for(int i=0; i<utentiTotali; i++) {
 			System.out.println(utenti[i].getNome());
 		}
 	}
 	
+	/**
+	 * 
+	 * @return Restituisce l'esito dell'accesso.
+	 */
 	public boolean entra() {
 		System.out.println("Benvenuto.\n[1] Login\n[2] Registrati");
 		
@@ -217,6 +293,10 @@ public class SocialNetwork {
 		}
 	}
 	
+	/**
+	 * 
+	 * @return Restituisce l'esito del login.
+	 */
 	public boolean login() {
 		int tentativi = 3;
 		
@@ -241,6 +321,12 @@ public class SocialNetwork {
 		return false;
 	}
 	
+	/**
+	 * 
+	 * @param email Email dell'utente da controllare.
+	 * @param password Password dell'utente da controllare.
+	 * @return Restituisce true se l'utente con le credenziali fornite esiste, altrimenti false.
+	 */
 	private boolean utenteEsiste(String email, String password) {
 		for(Utente utente:Arrays.copyOf(utenti, utentiTotali)) {
 			if(utente.credenziali.corrette(email, password)) {

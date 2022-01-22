@@ -5,10 +5,18 @@ public class Permesso {
 	private boolean like;
 	private boolean commenti;
 	
+	/**
+	 * 
+	 * @param account Account per il quale si vogliono definire i permessi.
+	 */
 	public Permesso(Utente account) {
 		this.perUtente = account;
 	}
 	
+	/**
+	 * 
+	 * @return Restituisce l'utente per il quale sono definiti i permessi.
+	 */
 	public Utente getPerUtente() {
 		return this.perUtente;
 	}
@@ -37,14 +45,26 @@ public class Permesso {
 		this.commenti = false;
 	}
 	
+	/**
+	 * 
+	 * @return Restituisce true se l'utente ha accesso ai post, altrimenti false.
+	 */
 	public boolean post() {
 		return post;
 	}
 	
+	/**
+	 * 
+	 * @return Restituisce true se l'utente ha accesso ai like, altrimenti false.
+	 */
 	public boolean like() {
 		return like;
 	}
 	
+	/**
+	 * 
+	 * @return Restituisce true se l'utente ha accesso ai commenti, altrimenti false.
+	 */
 	public boolean commenti() {
 		return commenti;
 	}

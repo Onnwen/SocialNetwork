@@ -9,6 +9,10 @@ public class Post {
 	private int like;
 	private int commentiTotali;
 	
+	/**
+	 * 
+	 * @param testo Testo del post.
+	 */
 	public Post(String testo) {
 		this.testo = testo;
 		this.data = LocalDateTime.now();
@@ -16,6 +20,13 @@ public class Post {
 		this.commentiTotali = 0;
 	}
 	
+	/**
+	 * 
+	 * @param id ID del post.
+	 * @param testo Testo del post.
+	 * @param data Data del post.
+	 * @param like Numero di like del post.
+	 */
 	public Post(int id, String testo, LocalDateTime data, int like) {
 		this.id = id;
 		this.testo = testo;
@@ -25,10 +36,18 @@ public class Post {
 		this.like = like;
 	}
 	
+	/**
+	 * 
+	 * @return Resituisce la data del post sotto forma di stringa.
+	 */
 	public String getData() {
 		return data.getDayOfMonth() + "/" + data.getMonthValue() + "/" + data.getYear();
 	}
 	
+	/**
+	 * 
+	 * @return Restituisce l'ID del post.
+	 */
 	public int getId() {
 		return id;
 	}

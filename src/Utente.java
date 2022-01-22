@@ -12,6 +12,14 @@ public class Utente {
 	private int postTotali;
 	public Credenziali credenziali;
 	
+	/**
+	 * 
+	 * @param id ID dell'utente.
+	 * @param nome Nome dell'utente.
+	 * @param cognome Cognome dell'utente.
+	 * @param email Email dell'utente.
+	 * @param password Password dell'utente.
+	 */
 	public Utente(int id, String nome, String cognome, String email, String password) {
 		this.id = id;
 		this.nome = nome;
@@ -24,10 +32,18 @@ public class Utente {
 		this.postTotali = 0;
 	}
 	
+	/**
+	 * 
+	 * @return Restituisce tutti i post dell'utente. Array della dimensione corrispondente al numero di post.
+	 */
 	public Post[] getPost() {
 		return Arrays.copyOf(post, postTotali);
 	}
 	
+	/**
+	 * 
+	 * @param post Post da aggiungere all'utente.
+	 */
 	public void addPost(Post post) {
 		this.post[postTotali] = post;
 		postTotali++;

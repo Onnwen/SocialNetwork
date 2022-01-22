@@ -1,6 +1,11 @@
 import java.util.Scanner;
 
 public class Leggi {
+	
+	/**
+	 * 
+	 * @return Restituisce un valore intero inserite da tastiera.
+	 */
 	static public int intero() {
 		Scanner scanInt = new Scanner(System.in);
 		System.out.print("-> ");
@@ -11,6 +16,10 @@ public class Leggi {
 		}
 	}
 	
+	/**
+	 * 
+	 * @return Restituisce una stringa inserita da tastiera.
+	 */
 	static public String stringa() {
 		Scanner scanString = new Scanner(System.in);
 		try {

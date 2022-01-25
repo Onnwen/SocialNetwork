@@ -1,6 +1,9 @@
 import java.time.LocalDate;
 import java.util.Arrays;
 
+/**
+ * The type Utente.
+ */
 public class Utente {
 	private int id;
 	private	String nome;
@@ -11,13 +14,14 @@ public class Utente {
 	private Post[] post;
 	private int postTotali;
 	public Credenziali credenziali;
-	
+
 	/**
-	 * 
-	 * @param id ID dell'utente.
-	 * @param nome Nome dell'utente.
-	 * @param cognome Cognome dell'utente.
-	 * @param email Email dell'utente.
+	 * Inizializza un nuovo tente Utente.
+	 *
+	 * @param id       ID dell'utente.
+	 * @param nome     Nome dell'utente.
+	 * @param cognome  Cognome dell'utente.
+	 * @param email    Email dell'utente.
 	 * @param password Password dell'utente.
 	 */
 	public Utente(int id, String nome, String cognome, String email, String password) {
@@ -31,24 +35,31 @@ public class Utente {
 		this.post = new Post[100];
 		this.postTotali = 0;
 	}
-	
+
 	/**
-	 * 
-	 * @return Restituisce tutti i post dell'utente. Array della dimensione corrispondente al numero di post.
+	 * Restituisce tutti i post dell'utente.
+	 *
+	 * @return Un array della dimensione corrispondente al numero totale di post.
 	 */
 	public Post[] getPost() {
 		return Arrays.copyOf(post, postTotali);
 	}
-	
+
 	/**
-	 * 
+	 * Aggiunge un post.
+	 *
 	 * @param post Post da aggiungere all'utente.
 	 */
 	public void addPost(Post post) {
 		this.post[postTotali] = post;
 		postTotali++;
 	}
-	
+
+	/**
+	 * Stampa le azioni da svolgere sull'utente.
+	 *
+	 * @param utenteConnesso l'utente attualmente connesso.
+	 */
 	public void azioni(Utente utenteConnesso) {
 		if(amico(utenteConnesso)) {
 			System.out.println("[1] Mostra post");
@@ -67,7 +78,13 @@ public class Utente {
 			}
 		}
 	}
-	
+
+	/**
+	 * Verifica se un determinato utente è stato aggiunto come amico.
+	 *
+	 * @param utente l'utente da verificare.
+	 * @return True se è amico, altrimenti false.
+	 */
 	public boolean amico(Utente utente) {
 		for(Permesso permesso:getPermessi()) {
 			if(permesso.getPerUtente() == utente) {
@@ -76,7 +93,10 @@ public class Utente {
 		}
 		return false;
 	}
-	
+
+	/**
+	 * Stampa tutti i post.
+	 */
 	public void stampaPost() {
 		if(postTotali > 0) {
 			for(Post p:Arrays.copyOf(post, postTotali)) {
@@ -88,7 +108,13 @@ public class Utente {
 			System.out.println("Nessun post pubblicato.");
 		}
 	}
-	
+
+	/**
+	 * Restituisce un post dato un determinato ID.
+	 *
+	 * @param idPost ID del post.
+	 * @return Il post se esiste, altrimenti NULL.
+	 */
 	public Post getPost(int idPost) {
 		for(int i=0; i<postTotali; i++) {
 			if (post[i].getId() == idPost)  {
@@ -97,27 +123,57 @@ public class Utente {
 		}
 		return null;
 	}
-	
+
+	/**
+	 * Restituisce id.
+	 *
+	 * @return Un ID, intero.
+	 */
 	public int getId() {
 		return id;
 	}
-	
-	public String getNome() {	
+
+	/**
+	 * Restituisce il nome.
+	 *
+	 * @return Una stringa contenente il nome.
+	 */
+	public String getNome() {
 		return nome;	
 	}
-	
-	public String getCognome() {	
+
+	/**
+	 * Restituisce il cognome.
+	 *
+	 * @return Una stringa contenente il cognome.
+	 */
+	public String getCognome() {
 		return cognome;	
 	}
-	
-	public LocalDate getDataDiNascita() {	
+
+	/**
+	 * Ritorna la data di nascita dell'utente.
+	 *
+	 * @return Una data.
+	 */
+	public LocalDate getDataDiNascita() {
 		return dataDiNascita;	
 	}
-	
+
+	/**
+	 * Imposta la data di nascita dell'utente.
+	 *
+	 * @param stringaData Data di nascita sotto forma di stringa.
+	 */
 	public void setDataDiNascita(String stringaData) {
 		this.dataDiNascita = LocalDate.parse(stringaData);
 	}
-	
+
+	/**
+	 * Ritorna i permessi.
+	 *
+	 * @return Un array di permessi.
+	 */
 	public Permesso[] getPermessi() {
 		return Arrays.copyOf(permessi, permessiTotali);
 	}

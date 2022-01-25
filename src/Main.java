@@ -1,7 +1,11 @@
-
-
+/**
+ * The type Main.
+ */
 public class Main {
 
+	/**
+	 * Main principale.
+	 */
 	public static void main(String[] args) {
 		SocialNetwork social = new SocialNetwork();
 		

@@ -53,7 +53,10 @@ public class Commento {
 	public String getData() {
 		return data.getDayOfMonth() + "/" + data.getMonthValue() + "/" + data.getYear();
 	}
-	
+
+	/**
+	 *  Stampa la data, l'autore e il contenuto del commento.
+	 */
 	public void stampa() {
 		System.out.println("\nPubblicato il " + this.getData() + " da " + this.utente.getNome() + " " + this.utente.getCognome() + ":");
 		System.out.println(this.testo);

@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 /**
  * 
- * @author Onnwen Cassitto
- *
+ * @author Onnwen Cassitto, Filippo Gardini, Andrea Gargiulo, Rohit Thind
+ * @version 1.3
  */
 
 public class SocialNetwork {
@@ -24,16 +24,18 @@ public class SocialNetwork {
 	}
 	
 	/**
+	 * Restituisce tutti gli account creati nel Social Network.
 	 * 
-	 * @return Restituisce un array di utenti contenenti tutti gli utenti attualmenti caricati, della dimensione esatta.
+	 * @return Un array, della dimensione esatta, contenenti tutti gli utenti attualmenti iscritti (caricati).
 	 */
 	public Utente[] getUtenti() {
 		return Arrays.copyOf(utenti, utentiTotali);
 	}
 	
 	/**
+	 * Restituisce l'utente connesso.
 	 * 
-	 * @return Restituisce l'utente attualmente connesso.
+	 * @return L'utente connesso.
 	 */
 	public Utente getUtenteConnesso() {
 		return utenteConnesso;
@@ -41,6 +43,7 @@ public class SocialNetwork {
 	
 	
 	/**
+	 * Permette d'aggiungere un utente.
 	 * 
 	 * @param utente L'utente da aggiungere.
 	 */
@@ -50,6 +53,7 @@ public class SocialNetwork {
 	}
 	
 	/**
+	 * Permette d'aggiungere un post a un utente.
 	 * 
 	 * @param post Post da aggiungere.
 	 * @param idUtente ID dell'utente a cui aggiungere il post.
@@ -70,6 +74,7 @@ public class SocialNetwork {
 	*/
 	
 	/**
+	 * Permette d'aggiungere un commento a un utente, l'autore di quest'ultimo.
 	 * 
 	 * @param commento Commento da aggiungere.
 	 * @param idUtente ID dell'utente che ha scritto il commento.
@@ -80,6 +85,7 @@ public class SocialNetwork {
 	}
 	
 	/**
+	 * Permette di ricercare un post dato un ID.
 	 * 
 	 * @param idPost ID del post da cercare.
 	 * @return Post corrispondente all'ID dato come parametro.
@@ -96,6 +102,7 @@ public class SocialNetwork {
 	}
 	
 	/**
+	 * Permette di ricercare un utente dato un ID.
 	 * 
 	 * @param idUtente ID dell'utente da cercare.
 	 * @return Utente corrispondente all'ID dato come parametro.
@@ -110,6 +117,7 @@ public class SocialNetwork {
 	}
 
 	/**
+	 * Permette di ricercare un utente dato il nome.
 	 * 
 	 * @param nome Nome dell'utente da cercare
 	 * @return Restituisce l'utente corrispondente a quel nome, se esiste, altrimenti null.
@@ -124,6 +132,7 @@ public class SocialNetwork {
 	}
 	
 	/**
+	 * Permette di ricercare un utente dati email e password.
 	 * 
 	 * @param email Indirizzo email utilizzato dall'utente.
 	 * @param password Password utilizzato dall'utente.
@@ -139,6 +148,7 @@ public class SocialNetwork {
 	}
 	
 	/**
+	 * Permette di registrare un nuovo utente nel Social Network.
 	 * 
 	 * @return Restituisce true se l'utente si è registrato correttamente, altrimenti false.
 	 */
@@ -279,6 +289,7 @@ public class SocialNetwork {
 	}
 	
 	/**
+	 * Stampa un menu per l'accesso al Social Network, gestisce autonomamente il login o la registrazione.
 	 * 
 	 * @return Restituisce l'esito dell'accesso.
 	 */
@@ -294,6 +305,7 @@ public class SocialNetwork {
 	}
 	
 	/**
+	 * Effettua il login. L'utente ha tre tentativi per inserire le proprie credenziali.
 	 * 
 	 * @return Restituisce l'esito del login.
 	 */
@@ -322,6 +334,7 @@ public class SocialNetwork {
 	}
 	
 	/**
+	 * Verifica se un utente, dati email e password, esiste.
 	 * 
 	 * @param email Email dell'utente da controllare.
 	 * @param password Password dell'utente da controllare.

@@ -2,7 +2,7 @@ import java.time.LocalDate;
 import java.util.Arrays;
 
 /**
- * The type Utente.
+ * Classe Utente. È la classe che permette di gestire gli utenti iscritti al Social Network.
  */
 public class Utente {
 	private int id;

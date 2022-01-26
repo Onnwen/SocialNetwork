@@ -7,6 +7,7 @@ public class Commento {
 	private LocalDateTime data;
 	
 	/**
+	 * Costruttore per nuovo commento.
 	 * 
 	 * @param testo Testo del commento.
 	 */
@@ -17,6 +18,7 @@ public class Commento {
 	}
 	
 	/**
+	 * Costruttore per commento caricato da file.
 	 * 
 	 * @param id ID del commento.
 	 * @param utente Utente che ha pubblicato il commento.

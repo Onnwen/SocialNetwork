@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.util.Scanner;
 */
 
+/**
+ * Classe attualmente non in uso e che sarà probabilmente deprecata.
+ */
 public class Id {
 	static public int genera() {
 		/*

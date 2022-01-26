@@ -21,22 +21,34 @@ public class Permesso {
 	public Utente getPerUtente() {
 		return this.perUtente;
 	}
-	
+
+	/**
+	 * Imposta una nuova amicizia. Tutti i permessi su true.
+	 */
 	public void setAmicizia() {
 		this.Amicizia= true;
 		this.commenti = true;
 		this.like = true;
 		this.post = true;
 	}
-	
+
+	/**
+	 * Rimuove i permessi per i post.
+	 */
 	public void removePermessoPost() {
 		this.post = false;
 	}
-	
+
+	/**
+	 * Rimuove il permesso per i mi piace.
+	 */
 	public void removePermessoLike() {
 		this.like = false;
 	}
-	
+
+	/**
+	 * Rimuove il permesso per i commenti.
+	 */
 	public void removePermessoCommenti() {
 		this.commenti = false;
 	}
@@ -64,7 +76,10 @@ public class Permesso {
 	public boolean commenti() {
 		return commenti;
 	}
-	
+
+	/**
+	 * Metodo non utilizzabile. Da completare.
+	 */
 	public void stampaPermessi() {
 		System.out.println("Permessi concessi a " + perUtente.getNome() + "\n[VISUALIZZAZIONE POST] Si\n[LIKE] Si\n[PUBBLICAZIONE COMMENTI] Si");
 	}

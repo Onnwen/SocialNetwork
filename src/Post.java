@@ -10,7 +10,8 @@ public class Post {
 	private int commentiTotali;
 	
 	/**
-	 * 
+	 * Costruttore per nuovo Post.
+	 *
 	 * @param testo Testo del post.
 	 */
 	public Post(String testo) {
@@ -21,6 +22,7 @@ public class Post {
 	}
 	
 	/**
+	 * Costruttore per Post caricato da file.
 	 * 
 	 * @param id ID del post.
 	 * @param testo Testo del post.
@@ -51,13 +53,19 @@ public class Post {
 	public int getId() {
 		return id;
 	}
-	
+
+	/**
+	 * Stampa il contenuto del post, con data e numero di like.
+	 */
 	public void stampa() {
 		System.out.println("\nPubblicato il " + this.getData() + ":");
 		System.out.println(this.testo);
 		System.out.println("Ha ricevuto " + this.like + " mi piace.\n");
 	}
-	
+
+	/**
+	 * Stampa le azioni disponibili per il post.
+	 */
 	public void azioni() {
 		System.out.println("[1] Metti like\n[2] Scrivi commento\n[3] Mostra commenti\n[4] Chiudi");
 		
@@ -76,11 +84,17 @@ public class Post {
 			}
 		}
 	}
-	
+
+	/**
+	 * Aggiunge 1 like.
+	 */
 	public void addLike() {
 		this.like++;
 	}
-	
+
+	/**
+	 * Stampa i commenti del post.
+	 */
 	public void stampaCommenti() {
 		if(commentiTotali > 0) {
 			for(Commento c:Arrays.copyOf(commenti, commentiTotali)) {
@@ -91,12 +105,20 @@ public class Post {
 			System.out.println("Nessun commento pubblicato.");
 		}
 	}
-	
+
+	/**
+	 * Aggiungere un commento da tastiera.
+	 */
 	public void addCommento() {
 		commenti[commentiTotali] = new Commento(Leggi.stringa());
 		commentiTotali++;
 	}
-	
+
+	/**
+	 * Aggiungere un commento esistente.
+	 *
+	 * @param commento Oggetto commento preesistente.
+	 */
 	public void addCommento(Commento commento) {
 		commenti[commentiTotali] = commento;
 		commentiTotali++;

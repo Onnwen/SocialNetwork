@@ -2,6 +2,9 @@ public class Credenziali {
 	private String email;
 	private String password;
 
+	/**
+	 * Costruttore.
+	 */
 	public Credenziali() {
 		this.email = "";
 		this.password = "";

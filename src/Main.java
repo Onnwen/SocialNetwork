@@ -1,8 +1,7 @@
 /**
- * The type Main.
+ * Main.
  */
 public class Main {
-
 	/**
 	 * Main principale.
 	 */

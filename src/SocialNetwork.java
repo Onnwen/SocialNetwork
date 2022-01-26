@@ -11,6 +11,9 @@ import java.util.Scanner;
  * @version 1.3
  */
 
+/**
+ * Classe SocialNetwork. È la classe madre che permette di gestire tutto il Social Network.
+ */
 public class SocialNetwork {
 	private Utente[] utenti;
 	private int utentiTotali;

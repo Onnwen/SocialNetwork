@@ -9,6 +9,9 @@ public class Post {
 	private int like;
 	private int commentiTotali;
 	
+	
+	
+	
 	/**
 	 * Costruttore per nuovo Post.
 	 *

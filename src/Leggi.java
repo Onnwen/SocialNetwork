@@ -20,6 +20,11 @@ public class Leggi {
 		}
 	}
 	
+	/**
+	@apiNote eliminare compareTo e sostiituire con altro punto
+	**/
+	
+	
 	 public String controlloStringaMail() throws Errore{
         try{
             if(registrati.getNomeProfilo().compareTo("@","."){

@@ -1,6 +1,9 @@
 import java.util.Scanner;
 
 public class Leggi {
+	private String segno ="@";
+	private Errore error;
+	private Registrati registrati;
 	static public int intero() {
 		Scanner scanInt = new Scanner(System.in);
 		System.out.print("-> ");
@@ -20,24 +23,22 @@ public class Leggi {
 		}
 	}
 	
-	/**
-	@apiNote eliminare compareTo e sostiituire con altro punto
-	**/
-	
-	
-	 public String controlloStringaMail() throws Errore{
+	public String controlloStringaMail(){
         try{
-            if(registrati.getNomeProfilo().compareTo("@","."){
+            if(registrati.getNomeProfilo().contains(segno)){
                 return controlloStringaMail();
             }
+            else{
+                System.out.println("Errore nella mail riscrivi: ");
+			    String nomeProfilo = stringa();
+			    registrati.setProfilo(nomeProfilo);
+            }
         }
-        catch(Errore e){
-            throw new Errore();
-        }
-		catch(IllegalFormatException exception){
-			System.out.println("Errore nella mail riscrivi: ");
+        catch(Exception errore){
+            System.out.println("Errore nella mail riscrivi: ");
 			String nomeProfilo = stringa();
 			registrati.setProfilo(nomeProfilo);
-		}
+        }
+        return null;
     }
 }

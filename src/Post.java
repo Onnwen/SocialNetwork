@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
@@ -8,9 +10,6 @@ public class Post {
 	private Commento[] commenti;
 	private int like;
 	private int commentiTotali;
-	
-	
-	
 	
 	/**
 	 * Costruttore per nuovo Post.
@@ -39,6 +38,19 @@ public class Post {
 		this.commenti = new Commento[100];
 		this.commentiTotali = 0;
 		this.like = like;
+	}
+
+	/**
+	 * Salva il post su file
+	 *
+	 * @param idUtente ID dell'utente che ha pubblicato il post.
+	 */
+	public void salvaPost(int idUtente) {
+		try {
+			FileWriter fileWriter = new FileWriter("post.csv", true);
+			fileWriter.write(idUtente + ";" + id + ";" + testo + ";" + like + ";" + data.toString() + "\n");
+			fileWriter.close();
+		} catch (IOException e) {}
 	}
 	
 	/**

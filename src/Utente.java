@@ -36,6 +36,10 @@ public class Utente {
 		this.postTotali = 0;
 	}
 
+	public void salvaPost(Post post) {
+		post.salvaPost(id);
+	}
+
 	/**
 	 * Restituisce tutti i post dell'utente.
 	 *

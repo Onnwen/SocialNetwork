@@ -119,6 +119,27 @@ public class SocialNetwork {
 		return null;
 	}
 
+	
+	//metodo askAmicizia, ricerca utente e scrittura su file
+	
+		public Utente askAmicizia(int idUtente) {
+		//ricerca dell'utente
+		for(int i=0; i<utentiTotali; i++) {
+			if(utenti[i].getId() == idUtente) {
+				return utenti[i];
+				//scrittura su file per richiedere l'amicizia
+				 File file = new File("richieste.txt");
+			      file.createNewFile();
+			      FileWriter myWriter = new FileWriter(file);
+				  myWriter.write(utenteConnesso.getId());
+				  myWriter.close();
+				
+			}
+		}
+		return null;
+	}
+	
+	
 	/**
 	 * Permette di ricercare un utente dato il nome.
 	 * 

@@ -28,4 +28,23 @@ public class Leggi {
 			return stringa();
 		}
 	}
+	
+	public String controlloStringaMail(){
+        try{
+            if(registrati.getNomeProfilo().contains(segno)){
+                return controlloStringaMail();
+            }
+            else{
+                System.out.println("Errore nella mail riscrivi: ");
+			    String nomeProfilo = stringa();
+			    registrati.setProfilo(nomeProfilo);
+            }
+        }
+        catch(Exception errore){
+            System.out.println("Errore nella mail riscrivi: ");
+			String nomeProfilo = stringa();
+			registrati.setProfilo(nomeProfilo);
+        }
+        return null;
+    }
 }

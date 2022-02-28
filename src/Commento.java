@@ -5,10 +5,12 @@ public class Commento {
 	private Utente utente;
 	private String testo;
 	private LocalDateTime data;
-	
+	private Commento[] commenti;
+	private int commentiTotali;
+
 	/**
 	 * Costruttore per nuovo commento.
-	 * 
+	 *
 	 * @param testo Testo del commento.
 	 */
 	public Commento(String testo) {
@@ -16,10 +18,10 @@ public class Commento {
 		this.testo = testo;
 		this.data = LocalDateTime.now();
 	}
-	
+
 	/**
 	 * Costruttore per commento caricato da file.
-	 * 
+	 *
 	 * @param id ID del commento.
 	 * @param utente Utente che ha pubblicato il commento.
 	 * @param testo Testo del commento.
@@ -31,25 +33,30 @@ public class Commento {
 		this.testo = testo;
 		this.data = data;
 	}
-	
+
+	public void addCommento(Commento commento) {
+		commenti[commentiTotali] = commento;
+		commentiTotali++;
+	}
+
 	/**
-	 * 
+	 *
 	 * @return Restituisce l'ID del commento.
 	 */
 	public int getId() {
 		return id;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @param testo Nuovo testo del commento.
 	 */
 	public void modifica(String testo) {
 		this.testo = testo;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @return Restituisce la data del commento sotto forma di stringa.
 	 */
 	public String getData() {

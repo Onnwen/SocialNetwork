@@ -10,7 +10,7 @@ public class Post {
 	private Commento[] commenti;
 	private int like;
 	private int commentiTotali;
-	
+
 	/**
 	 * Costruttore per nuovo Post.
 	 *
@@ -22,10 +22,10 @@ public class Post {
 		this.commenti = new Commento[100];
 		this.commentiTotali = 0;
 	}
-	
+
 	/**
 	 * Costruttore per Post caricato da file.
-	 * 
+	 *
 	 * @param id ID del post.
 	 * @param testo Testo del post.
 	 * @param data Data del post.
@@ -52,17 +52,26 @@ public class Post {
 			fileWriter.close();
 		} catch (IOException e) {}
 	}
-	
+
+	public Commento getCommento(int idCommento) {
+		for(int i=0; i<commentiTotali; i++) {
+			if (commenti[i].getId() == id) {
+				return commenti[i];
+			}
+		}
+		return null;
+	}
+
 	/**
-	 * 
+	 *
 	 * @return Resituisce la data del post sotto forma di stringa.
 	 */
 	public String getData() {
 		return data.getDayOfMonth() + "/" + data.getMonthValue() + "/" + data.getYear();
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @return Restituisce l'ID del post.
 	 */
 	public int getId() {
@@ -83,7 +92,7 @@ public class Post {
 	 */
 	public void azioni() {
 		System.out.println("[1] Metti like\n[2] Scrivi commento\n[3] Mostra commenti\n[4] Chiudi");
-		
+
 		switch(Leggi.intero()) {
 			case 1: {
 				addLike();
@@ -115,7 +124,7 @@ public class Post {
 			for(Commento c:Arrays.copyOf(commenti, commentiTotali)) {
 				c.stampa();
 			}
-		} 
+		}
 		else {
 			System.out.println("Nessun commento pubblicato.");
 		}
